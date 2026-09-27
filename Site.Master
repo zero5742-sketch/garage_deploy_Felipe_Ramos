@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.Master.cs" Inherits="Garage_UI.SiteMaster" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Productora Garage</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <!-- LOGO DE LA ORGANIZACIÓN -->
+            <header>
+                <img src="imagen/logo.png" alt="Logo Gorage" width="200" />
+            </header>
+
+            <!-- MENÚ DE NAVEGACIÓN BASADO EN SiteMap Y SiteMapDatasource -->
+            <nav>
+                <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" />
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="SiteMapDataSource1" StaticDisplayLevels="1">
+                </asp:Menu>
+            </nav>
+
+            <hr />
+
+            <!-- CONTENIDO PRINCIPAL DONDE SE CARGARÁN LAS OTRAS PÁGINAS -->
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
